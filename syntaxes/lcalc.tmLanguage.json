@@ -63,20 +63,20 @@
 		"atom": {
 			"patterns": [
 				{
-					"begin": "\\(",
-					"end": "\\)",
-					"beginCaptures": {
-					"0": { "name": "punctuation.paren.open" }
-					},
-					"endCaptures": {
-					"0": { "name": "punctuation.paren.close" }
-					},
+					"match": "(\\()(.*)(\\))",
 					"name": "expression.group",
-					"patterns": [
-						{ "include": "#term" },
-						{ "include": "#atom" },
-						{ "include": "#comment" }
-					]
+					"captures": {
+						"0": { "name": "expression.group" },
+						"1": { "name": "punctuation.paren.open" },
+						"2": {
+							"patterns": [
+								{ "include": "#term" },
+								{ "include": "#atom" },
+								{ "include": "#comment" }
+							]
+						},
+						"3": { "name": "punctuation.paren.close" }
+					}
 				},
 				{
 					"match": "[0-9]+",
