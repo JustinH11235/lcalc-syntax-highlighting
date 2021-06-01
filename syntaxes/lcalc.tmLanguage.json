@@ -1,0 +1,117 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "LCalc",
+	"patterns": [
+		{ "include": "#statement" },
+		{ "include": "#comment" }
+	],
+	"repository": {
+		"statement": {
+			"patterns": [
+				{
+					"include": "#assignment"
+				},
+				{
+					"include": "#printing"
+				}
+			]
+		},
+		"assignment": {
+			"patterns": [
+				{
+					"match": "([a-zA-Z0-9_]+)\\s*(:=)(.*)",
+					"captures": {
+						"1": { "name": "entity.name.function" },
+						
+						"2": { "name": "keyword.operator" },
+						"3": {
+							"patterns": [
+								{ "include": "#term" },
+								{ "include": "#atom" },
+								{ "include": "#comment" }
+							]
+						}
+						
+					}
+				}
+			]
+		},
+		"printing": {
+			"patterns": [
+				{
+					"match": "(function|int|bool)\\s*(::)(.*)",
+					"captures": {
+						"1": { "name": "storage.type" },
+						"2": { "name": "keyword.operator" },
+						"3": {
+							"patterns": [
+								{ "include": "#term" },
+								{ "include": "#atom" },
+								{ "include": "#comment" }
+							]
+						}
+					}
+				},
+				{
+					"include": "#term"
+				},
+				{
+					"include": "atom"
+				}
+			]
+		},
+		"atom": {
+			"patterns": [
+				{
+					"begin": "\\(",
+					"end": "\\)",
+					"beginCaptures": {
+					"0": { "name": "punctuation.paren.open" }
+					},
+					"endCaptures": {
+					"0": { "name": "punctuation.paren.close" }
+					},
+					"name": "expression.group",
+					"patterns": [
+						{ "include": "#term" },
+						{ "include": "#atom" },
+						{ "include": "#comment" }
+					]
+				},
+				{
+					"match": "[0-9]+",
+					"name": "constant.numeric"
+				},
+				{
+					"match": "[a-zA-Z0-9_]+",
+					"name": "variable.parameter"
+				}
+			]
+		},
+		"term": {
+			"patterns": [
+				{
+					"match": "(\\\\|λ)([a-zA-Z0-9_]+)(\\.)(.*)",
+					"captures": {
+						"2": { "name": "entity.name.function" },
+						"4": {
+							"patterns": [
+								{ "include": "#term" },
+								{ "include": "#atom" },
+								{ "include": "#comment" }
+							]
+						}
+					}
+				}
+			]
+		},
+		"comment": {
+			"match": "#.*",
+			"name": "comment.line.number-sign"
+		}
+
+
+	
+	},
+	"scopeName": "source.lc"
+}

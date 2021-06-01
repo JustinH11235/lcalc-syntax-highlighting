@@ -1,0 +1,25 @@
+{
+    "name": "lcalc-syntax-highlighting",
+    "displayName": "LCalc Syntax Highlighting",
+    "description": "Syntax highlighting for LCalc",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.56.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "lcalc",
+            "aliases": ["LCalc", "lcalc"],
+            "extensions": [".lc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "lcalc",
+            "scopeName": "source.lc",
+            "path": "./syntaxes/lcalc.tmLanguage.json"
+        }]
+    }
+}
