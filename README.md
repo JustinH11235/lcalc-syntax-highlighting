@@ -11,9 +11,13 @@ This is a VSCode extension that adds syntax highlighting for the LCalc language.
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.1
 
-Initial version of the extension (not ready to publish)
+Initial version of the extension (not ready to publish).
+
+### 0.1.0
+
+First published version on VSCode Extension Marketplace.
 
 -----------------------------------------------------------------------------------------------------------
 

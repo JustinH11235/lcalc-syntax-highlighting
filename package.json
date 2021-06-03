@@ -1,8 +1,14 @@
 {
     "name": "lcalc-syntax-highlighting",
     "displayName": "LCalc Syntax Highlighting",
-    "description": "Syntax highlighting for LCalc",
-    "version": "0.0.1",
+    "description": "Syntax highlighting for the lambda calculus based language LCalc.",
+    "version": "0.1.0",
+    "icon": "logo.png",
+    "publisher": "justinh0",
+    "repository": {
+        "type": "Github",
+        "url": "https://github.com/JustinH11235/lcalc-syntax-highlighting"
+    },
     "engines": {
         "vscode": "^1.56.0"
     },
