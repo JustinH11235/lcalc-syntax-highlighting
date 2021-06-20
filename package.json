@@ -3,7 +3,7 @@
     "displayName": "LCalc Syntax Highlighting",
     "description": "Syntax highlighting for the lambda calculus based language LCalc.",
     "version": "0.1.0",
-    "icon": "logo.png",
+    "icon": "images/logo.png",
     "publisher": "justinh0",
     "repository": {
         "type": "Github",
