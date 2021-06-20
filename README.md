@@ -9,6 +9,8 @@ This is a VSCode extension that adds syntax highlighting for the LCalc language.
     * Integer constants detected and highlighted differently
     * Different colors for bound and free variables
 
+![Screenshot ](/images/lcalc-syntax-highlighting.png?raw=true)
+
 ## Release Notes
 
 ### 0.0.1
